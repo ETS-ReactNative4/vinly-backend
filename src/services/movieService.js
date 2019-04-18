@@ -1,10 +1,11 @@
 import http from "./httpService";
+import { apiUrl } from "../config.json";
 
-const apiEndopoint = "http://localhost:3900/api/movies";
+const apiEndpoint = apiUrl + "/movies";
 export function getMovies() {
-  return http.get(apiEndopoint);
+  return http.get(apiEndpoint);
 }
 
 export function deleteMovie(movieId) {
-  return http.delete(apiEndopoint + "/" + movieId);
+  return http.delete(apiEndpoint + "/" + movieId);
 }
